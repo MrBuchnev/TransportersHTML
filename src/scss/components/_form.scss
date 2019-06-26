@@ -1,0 +1,152 @@
+@import '../abstracts/variables';
+
+.form {
+    padding: 32px 40px;
+    margin-bottom: 64px;
+    border-radius: 8px;
+    background: $gradient-primary;
+
+    @include respond(phone) {
+        padding: 18px 16px;
+    }
+
+    &__heading {
+        color: $color-white;
+        font-size: $h3-size;
+        padding-bottom: 24px;
+        font-weight: bold;
+        letter-spacing: -0.12px;
+
+        @include respond(phone) {
+            font-size: 18px;
+        }
+    }
+
+    &__fieldset {
+        padding-bottom: 16px;
+        position: relative;
+    }
+
+    &__group {
+        display: flex;
+
+        &--field {
+            flex-direction: column;
+            align-items: flex-start;
+
+            &:not(:last-of-type) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &--buttons {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+
+    &__label {
+        color: $color-white;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    &__field {
+        font-size: 18px;
+        letter-spacing: -0.09px;
+        line-height: 1.33;
+        width: 100%;
+        border-radius: 4px;
+        padding: 12px 16px 10px;
+        border: none;
+
+        @include respond(phone) {
+            font-size: 16px;
+            padding: 9px 12px 7px;
+        }
+
+        &::placeholder {
+            color: $color-gray-light-med;
+            font-size: 18px;
+
+            @include respond(phone) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__message {
+        color: $color-white;
+        font-size: 14px;
+        min-height: 16px;
+
+        @include respond(phone) {
+            font-size: 11px;
+        }
+    }
+
+    &__button {
+        padding: 12px 28px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: transparent;
+        border-radius: 24px;
+        line-height: 1.33;
+        letter-spacing: -0.09px;
+
+        &:active {
+            transform: translateY(2px);
+        }
+
+        @include respond(phone) {
+            font-size: 16px;
+            padding: 9px 24px;
+        }
+
+        &--submit {
+            border: 2px solid $color-white;
+            margin-right: 8px;
+            transition: $transition-quick;
+
+            & > span {
+                color: $color-white;
+                transition: $transition-quick;
+                background: none;
+            }
+
+            &:hover {
+                border-color: transparent;
+                text-decoration: none;
+                background: $color-white;
+                transition: $transition-quick;
+
+                & > span {
+                    background: $gradient-primary;
+                    background-clip: text;
+                    color: transparent;
+                    transition: $transition-quick;
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &--reset {
+            color: $color-white;
+            border: 2px solid transparent;
+            transition: $transition-quick;
+
+            &:hover {
+                border: 2px solid $color-white;
+                transition: $transition-quick;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.description {
+    padding: 40px 0;
+
+    @include respond(phone) {
+        padding: 0;
+    }
+
+    &__heading {
+        font-size: 48px;
+        letter-spacing: -0.24px;
+        margin-bottom: $text-bottom-margin;
+
+        @include respond(phone) {
+            font-size: $h3-size;
+            letter-spacing: -0.12px;
+            margin-top: 16px;
+        }
+    }
+
+    &__text {
+        line-height: 1.67;
+        font-size: 18px;
+        margin-bottom: $text-bottom-margin;
+
+        @include respond(phone){
+            font-size: 16px;
+
+            &:last-of-type {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    &__links {
+        color: $color-black;
+
+        @include respond(phone) {
+            padding-right: 0;
+        }
+
+        &--mobile {
+            display: none;
+            padding-right: 0;
+
+            &.main-carousel {
+                width: 100%;
+
+                & .carousel-cell {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    letter-spacing: -0.08px;
+                    padding-right: 16px;
+                }
+            }
+
+            @include respond(phone) {
+                display: block;
+            }
+        }
+
+        &--desktop {
+            list-style: none;
+            padding-left: 0;
+
+            @include respond(phone) {
+                display: none;
+            }
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        letter-spacing: -0.09px;
+        line-height: 1.33;
+        font-weight: bold;
+        padding: 16px 0;
+        transition: $transition-quick;
+
+        &:active {
+            transform: translateY(2px);
+            transition: $transition-quick;
+        }
+
+        &--desktop {
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $color-gray-ultra-light;
+            }
+        }
+
+        &--active {
+            & > a {
+                color: $color-gray-medium;
+            }
+        }
+
+        & a {
+            color: $color-black;
+            transition: $transition-quick;
+
+            &:hover {
+                text-decoration: none;
+                color: $color-gray-medium;
+                transition: $transition-quick;
+            }
+        }
+    }
+}

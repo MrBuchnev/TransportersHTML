@@ -1,0 +1,18 @@
+@import "../abstracts/variables";
+
+.footer {
+    &__container {
+        font-size: 18px;
+        line-height: 1.56;
+        padding: 24px 0;
+        border-top: 1px solid $color-gray-ultra-light;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(phone) {
+            font-size: 16px;
+            line-height: 1.75;
+        }
+    }
+}

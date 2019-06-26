@@ -1,0 +1,67 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.modal {
+    padding: 0 !important;
+
+    & .modal-dialog {
+        max-width: 414px;
+
+        & .modal-content {
+            padding-bottom: 48px;
+            border-radius: 8px;
+
+            & .modal-header {
+                border: none;
+
+                & .close {
+                    padding: 24px;
+                    font-size: 18px;
+                    color: $color-black;
+                    opacity: 1;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:hover {
+                        & i {
+                            color: $color-gray-medium;
+                            transition: $transition-default;
+                        }
+                    }
+
+                    & i {
+                        color: $color-black;
+                        transition: $transition-default;
+                    }
+                }
+            }
+
+            & .modal-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: $color-black;
+                padding-top: 24px;
+
+                & .modal__image {
+                    padding-bottom: 36px;
+                }
+
+                & .modal-title {
+                    font-size: $h3-size;
+                    font-weight: bold;
+                    line-height: 1.33;
+                    letter-spacing: -0.12px;
+                    margin-bottom: 8px;
+                }
+
+                & .modal__text {
+                    font-size: 18px;
+                    line-height: 1.33;
+                }
+            }
+        }
+    }
+}
