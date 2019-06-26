@@ -1,0 +1,12 @@
+@import '../abstracts/variables';
+
+.row {
+    max-width: $grid-width;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0 auto;
+
+    @include respond(phone) {
+        width: 100% !important;
+    }
+}

@@ -2,18 +2,19 @@
 
 .image {
     &__container {
-        width: 100%;
         padding: 84px 40px 0;
         margin: 0 auto;
-        max-width: $max-content-width;
+        max-width: $max-content-width-desktop;
 
         @include respond(phone) {
             padding: 54px 0 0;
+            max-width: $max-content-width-mobile;
         }
     }
 
     &__img {
         width: 100%;
         height: auto;
+        border-radius: 8px;
     }
 }

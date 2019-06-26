@@ -12,7 +12,11 @@ $gradient-primary: linear-gradient(130deg, $color-melon, $color-bubble-gum);
 $transition-default: all .3s ease-in-out;
 $transition-quick: all .1s ease-in-out;
 
-$max-content-width: 1366px;
+$max-content-width-desktop: 1261px;
+$max-content-width-mobile: 1319px;
 $text-bottom-margin: 24px;
 $h1-size: 48px;
 $h3-size: 24px;
+
+$grid-width: 1366px;
+$gutter-vertical: 20px;

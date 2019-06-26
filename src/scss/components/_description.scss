@@ -8,6 +8,20 @@
         padding: 0;
     }
 
+    &__column {
+        &--left {
+            grid-column: 1 / 8;
+
+            @include respond(phone) {
+                grid-column: 1 / 13;
+            }
+        }
+
+        &--right {
+            grid-column: 10 / 13;
+        }
+    }
+
     &__heading {
         font-size: 48px;
         letter-spacing: -0.24px;
@@ -34,6 +48,17 @@
         }
     }
 
+    & .row {
+        overflow-x: scroll;
+        -ms-overflow-style: none;  // IE 10+
+        scrollbar-width: none; // Mozilla (old)
+        overflow: -moz-scrollbars-none; // Mozilla (newer)
+
+        &::-webkit-scrollbar {
+            display: none; // Safari, Chrome
+        }
+    }
+
     &__links {
         color: $color-black;
 
@@ -42,26 +67,18 @@
         }
 
         &--mobile {
+            grid-column: 1 / 13;
             display: none;
             padding-right: 0;
-
-            &.main-carousel {
-                width: 100%;
-
-                & .carousel-cell {
-                    font-size: 16px;
-                    line-height: 1.5;
-                    letter-spacing: -0.08px;
-                    padding-right: 16px;
-                }
-            }
+            width: 100%;
 
             @include respond(phone) {
-                display: block;
+                display: flex;
             }
         }
 
         &--desktop {
+            grid-column: 10 / 13;
             list-style: none;
             padding-left: 0;
 
@@ -90,21 +107,32 @@
             }
         }
 
-        &--active {
-            & > a {
-                color: $color-gray-medium;
+        &--mobile {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: -0.08px;
+
+            &:not(:last-of-type) {
+                padding-right: 16px;
             }
         }
 
         & a {
             color: $color-black;
             transition: $transition-quick;
+            text-decoration: none;
 
             &:hover {
-                text-decoration: none;
                 color: $color-gray-medium;
                 transition: $transition-quick;
             }
         }
+
+        &--active {
+            & > a {
+                color: $color-gray-medium;
+            }
+        }
+
     }
 }
